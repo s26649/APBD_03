@@ -1,4 +1,5 @@
 ﻿using APBD_03.Containers;
+using APBD_03.Exceptions;
 using APBD_03.Models;
 
 namespace APBD_03;
@@ -35,5 +36,29 @@ class Program
 
         Console.WriteLine("statek 2 po transferze:");
         Console.WriteLine(ship2.ToString());
+        
+        try
+        {
+            Console.WriteLine("próba załadowania ładunku który przekracza ładowność kontenera:");
+            gasContainer.Load(20000);
+        }
+        catch (OverfillException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+        Console.WriteLine("próba załadowania niebezpiecznego ładunku do kontenera na płyny:");
+        try
+        {
+            liquidContainer.Load(liquidContainer.MaxLoadCapacity * 0.6);
+        }
+        catch (OverfillException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+        Console.WriteLine("informacje o kontenerach po próbach załadunku:");
+        Console.WriteLine(gasContainer.ToString());
+        Console.WriteLine(liquidContainer.ToString());
     }
 }
