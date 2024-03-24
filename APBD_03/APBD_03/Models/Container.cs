@@ -20,4 +20,9 @@ public abstract class Container
 
     public abstract void Load(double mass);
     public abstract void Unload();
+    
+    public override string ToString()
+    {
+        return $"Numer seryjny: {SerialNumber}, Typ: {GetType().Name}, Masa ładunku: {LoadMass}kg, Maksymalna ładowność: {MaxLoadCapacity}kg, Wymiary: {Height}cm x {Depth}cm";
+    }
 }

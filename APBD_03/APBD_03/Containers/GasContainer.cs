@@ -33,4 +33,9 @@ public class GasContainer : Container, IHazardNotifier
     {
         Console.WriteLine($"Wykryto niebezpieczne zdarzenie w kontenerze {SerialNumber}");
     }
+    
+    public override string ToString()
+    {
+        return base.ToString() + $", Ciśnienie: {Pressure} atm";
+    }
 }

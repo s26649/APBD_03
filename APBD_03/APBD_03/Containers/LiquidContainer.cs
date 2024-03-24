@@ -34,4 +34,9 @@ public class LiquidContainer : Container, IHazardNotifier
     {
         Console.WriteLine($"Wykryto niebezpieczne zdarzenie w kontenerze {SerialNumber}");
     }
+    
+    public override string ToString()
+    {
+        return base.ToString() + $", Ładunek niebezpieczny: {(IsHazardous ? "Tak" : "Nie")}";
+    }
 }

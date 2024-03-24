@@ -29,4 +29,8 @@ public class RefrigeratedContainer : Container
         LoadMass = 0;
     }
     
+    public override string ToString()
+    {
+        return base.ToString() + $", Typ produktu: {ProductType}, Temperatura: {Temperature}°C";
+    }
 }

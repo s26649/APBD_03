@@ -79,4 +79,19 @@ public class ContainerShip
         }
         return false;
     }
+    
+    public override string ToString()
+    {
+        var shipInfo = new StringBuilder();
+        
+        shipInfo.AppendLine($"Kontenerowiec Info: Maksymalna prędkość: {MaxSpeed} węzłów, Maksymalna liczba kontenerów: {MaxContainerCount}, Maksymalna waga: {MaxTotalWeight} ton");
+        shipInfo.AppendLine($"Ilość załadowanych kontenerów: {Containers.Count}, Łączna waga: {Containers.Sum(c => c.LoadMass + c.TareWeight) / 1000} ton");
+
+        foreach (var container in Containers)
+        {
+            shipInfo.AppendLine(container.ToString());
+        }
+
+        return shipInfo.ToString();
+    }
 }
