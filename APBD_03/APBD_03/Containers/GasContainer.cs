@@ -8,8 +8,8 @@ public class GasContainer : Container, IHazardNotifier
 {
     public double Pressure { get; set; }
 
-    public GasContainer(double tareWeight, int height, int depth, string serialNumber, double maxLoadCapacity, double pressure)
-        : base(tareWeight, height, depth, serialNumber, maxLoadCapacity)
+    public GasContainer(double tareWeight, int height, int depth, double maxLoadCapacity, double pressure)
+        : base(tareWeight, height, depth, ContainerSerialNumberGenerator.GenerateSerialNumber("G"), maxLoadCapacity)
     {
         Pressure = pressure;
     }

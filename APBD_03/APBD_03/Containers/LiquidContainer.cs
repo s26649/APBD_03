@@ -8,8 +8,8 @@ public class LiquidContainer : Container, IHazardNotifier
 {
     public bool IsHazardous { get; set; }
 
-    public LiquidContainer(double tareWeight, int height, int depth, string serialNumber, double maxLoadCapacity, bool isHazardous)
-        : base(tareWeight, height, depth, serialNumber, maxLoadCapacity)
+    public LiquidContainer(double tareWeight, int height, int depth, double maxLoadCapacity, bool isHazardous)
+        : base(tareWeight, height, depth, ContainerSerialNumberGenerator.GenerateSerialNumber("L"), maxLoadCapacity)
     {
         IsHazardous = isHazardous;
     }

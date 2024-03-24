@@ -8,8 +8,8 @@ public class RefrigeratedContainer : Container
     public string ProductType { get; }
     public double Temperature { get; }
 
-    public RefrigeratedContainer(double tareWeight, int height, int depth, string serialNumber, double maxLoadCapacity, string productType, double temperature)
-        : base(tareWeight, height, depth, serialNumber, maxLoadCapacity)
+    public RefrigeratedContainer(double tareWeight, int height, int depth, double maxLoadCapacity, string productType, double temperature)
+        : base(tareWeight, height, depth, ContainerSerialNumberGenerator.GenerateSerialNumber("C"), maxLoadCapacity)
     {
         ProductType = productType;
         Temperature = temperature;
